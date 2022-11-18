@@ -1,0 +1,67 @@
+Variables :
+IF ELSE PLUS MINUS TIMES POW DIVIDED MOD EQUALS RETURN BRACE1 BRACE2 KURAWAL1 KURAWAL2 GT LT SERU DOT COMMA COLON SEMICOLON PETIK1 PETIK2 STRING BOOL NEW TRUE FALSE BREAK CONST SWITCH CASE DEFAULT TRY CATCH FINALLY THROW LET VAR CONTINUE DELETE FOR FUNCTION NULL WHILE DO
+Productions;
+IF -> if;
+ELSE -> else;
+PLUS -> +;
+MINUS -> -;
+TIMES -> *;
+POW -> **;
+DIVIDED -> /;
+MOD -> %;
+EQUALS -> =;
+RETURN -> return;
+BRACE1 -> (;
+BRACE2 -> );
+SQUARE1 -> [;
+SQUARE2 -> ];
+KURAWAL1 -> {;
+KURAWAL2 -> };
+UNDERSCORE -> _;
+GT -> >;
+LT -> <;
+SERU -> !;
+DOT -> .;
+COMMA -> ,;
+COLON -> :;
+SEMICOLON -> ;;
+HASHTAG -> #;
+PETIK1 -> ';
+PETIK2 -> ";
+STRING -> String;
+BOOL -> Boolean;
+AND -> &&;
+OR -> ||;
+NEW -> new;
+TRUE -> true;
+FALSE -> false;
+BREAK -> break;
+CONST -> const;
+SWITCH -> switch;
+CASE -> case;
+DEFAULT -> default;
+TRY -> try;
+CATCH -> catch;
+FINALLY -> finally;
+THROW -> throw;
+LET -> let;
+VAR -> var;
+CONTINUE -> continue;
+DELETE -> delete;
+FOR -> for;
+FUNCTION -> function;
+NULL -> null;
+WHILE -> while;
+DO -> do;
+ALPHABET ->  a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z;
+NUM -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+OTHER -> ~ | ` | @ | $ | ^ | & | SERU | HASHTAG | MOD | BRACE1 | BRACE2 | TIMES | PLUS | MINUS | COMMA | DIVIDED | COLON | LT | EQUALS | GT | SQUARE1 | SQUARE2 | UNDERSCORE | KURAWAL1 | KURAWAL2 | |;
+OP -> PLUS | MINUS | TIMES | DIVIDED | MOD | POW.
+NUMBER -> NUMBER NUMBER | NUM;
+KATA -> KATA KATA | ALPHABET | NUM | OTHER;                 belum selesai
+VAR_2 -> VAR_2 VAR_2 | ALPHABET | NUM;
+VAR -> ALPHABET | ALPHABET VAR_2;
+VALUE -> NUMBER | BOOLEAN | KATA;                           belom
+COMPARE -> GT | LT | GT EQUALS | LT EQUALS | EQUALS EQUALS | SERU EQUALS;
+BOOLEAN ->  BOOLEAN AND BOOLEAN | BOOLEAN OR BOOLEAN | TRUE | FALSE | SERU BOOLEAN | VALUE COMPARE VALUE;
+IF_SYNTAX -> IF BRACE1 BRACE2 KURAWAL1
