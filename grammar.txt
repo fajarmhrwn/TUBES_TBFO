@@ -47,7 +47,7 @@ CATCH -> catch;
 FINALLY -> finally;
 THROW -> throw;
 LET -> let;
-VAR -> var;
+VARS -> var;
 CONTINUE -> continue;
 DELETE -> delete;
 FOR -> for;
@@ -59,16 +59,18 @@ FROM -> from;
 IMPORT -> import;
 DO -> do;
 ALPHABET ->  a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z;
-NUM -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+NUM1 -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+NUM2 -> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+NUMM -> NUM1 | NUMM NUMM;
+NUMBER -> NUM2 NUMM | NUM2;
 OTHER -> ~ | ` | @ | $ | ^ | & | \ | ? | SERU | HASHTAG | MOD | BRACE1 | BRACE2 | TIMES | PLUS | MINUS | COMMA | DIVIDED | COLON | LT | EQUALS | GT | SQUARE1 | SQUARE2 | UNDERSCORE | KURAWAL1 | KURAWAL2 | DOT |;
 OP -> PLUS | MINUS | TIMES | DIVIDED | MOD | POW.
-NUMBER -> NUMBER NUMBER | NUM;
 SYNTAX -> NULL | AND | OR | TRUE | FALSE | SERU | FOR | IF | ELSE | WHILE | BREAK | CONTINUE | FUNC | RETURN | THROW | CLASS | FROM | IMPORT;
 NL -> NL NL | newline;
-KATA -> KATA KATA | ALPHABET | NUM | OTHER;                 belum selesai
+KATA -> KATA KATA | ALPHABET | NUM1 | OTHER;                 belum selesai
 VAR_2 -> VAR_2 VAR_2 | ALPHABET | NUM;
 VAR -> ALPHABET | ALPHABET VAR_2;
-VALUE -> NUMBER | BOOLEAN | KATA;                           belom
+VALUE -> NUMBER | BOOLEAN | KATA | ARRAY | FUNCTION_SYNTAX | VV OP VV.                        belom
 VV -> VV COMMA VV | VAR | VALUE;
 COMPARE -> GT | LT | GT EQUALS | LT EQUALS | EQUALS EQUALS | SERU EQUALS;
 BOOLEAN ->  BOOLEAN AND BOOLEAN | BOOLEAN OR BOOLEAN | TRUE | FALSE | SERU BOOLEAN | VALUE COMPARE VALUE;
