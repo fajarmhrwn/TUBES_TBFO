@@ -1,6 +1,7 @@
 Variables :
 IF ELSE PLUS MINUS TIMES POW DIVIDED MOD EQUALS RETURN BRACE1 BRACE2 KURAWAL1 KURAWAL2 GT LT SERU DOT COMMA COLON SEMICOLON PETIK1 PETIK2 STRING BOOL NEW TRUE FALSE BREAK CONST SWITCH CASE DEFAULT TRY CATCH FINALLY THROW LET VAR CONTINUE DELETE FOR FUNCTION NULL WHILE DO
 Productions;
+SS -> SS SS | IF | WHILE | FOR | CLASS | IMPORT | FUNCTION | THROW | COMMENT | BREAK | CONTINUE | WITH | VAR EQUAL VV | VAR OP EQUAL VV | NULL | ARRAY | DICT | STRING | BOOLEAN | NUMBER | TRY | SWITCH | DELETE | DEFAULT; 
 IF -> if;
 ELSE -> else;
 PLUS -> +;
@@ -9,6 +10,7 @@ TIMES -> *;
 POW -> **;
 DIVIDED -> /;
 MOD -> %;
+EQUAL_TO -> ==;
 EQUALS -> =;
 RETURN -> return;
 BRACE1 -> (;
@@ -52,12 +54,17 @@ FOR -> for;
 FUNC -> function;
 NULL -> null;
 WHILE -> while;
+CLASS -> class;
+FROM -> from;
+IMPORT -> import;
 DO -> do;
 ALPHABET ->  a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z;
 NUM -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 OTHER -> ~ | ` | @ | $ | ^ | & | \ | ? | SERU | HASHTAG | MOD | BRACE1 | BRACE2 | TIMES | PLUS | MINUS | COMMA | DIVIDED | COLON | LT | EQUALS | GT | SQUARE1 | SQUARE2 | UNDERSCORE | KURAWAL1 | KURAWAL2 | DOT |;
 OP -> PLUS | MINUS | TIMES | DIVIDED | MOD | POW.
 NUMBER -> NUMBER NUMBER | NUM;
+SYNTAX -> NULL | AND | OR | TRUE | FALSE | SERU | FOR | IF | ELSE | WHILE | BREAK | CONTINUE | FUNC | RETURN | THROW | CLASS | FROM | IMPORT;
+NL -> NL NL | newline;
 KATA -> KATA KATA | ALPHABET | NUM | OTHER;                 belum selesai
 VAR_2 -> VAR_2 VAR_2 | ALPHABET | NUM;
 VAR -> ALPHABET | ALPHABET VAR_2;
