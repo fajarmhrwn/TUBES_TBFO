@@ -1,5 +1,5 @@
 import re 
-import fa as fa
+from fa import *
 
 def line_splitter(input_file):
     """Split a line into a list of words"""
@@ -40,9 +40,9 @@ def split(input_file):
             tempResult.append('newline')
         elif statement == 'in' or statement == 'if':
             tempResult.append(statement)
-        elif(fa.isVariable(statement)):
+        elif(cekVar(statement)):
             tempResult.append('a')
-        elif(fa.isNumber(statement)):
+        elif(cekNum(statement)):
             tempResult.append('1')
         else:
             continue

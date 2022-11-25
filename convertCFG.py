@@ -94,3 +94,13 @@ def saveCNF(productions):
     for key,value in temp.items():
         Grammar += key+" -> "+value+"\n"
     file.write(Grammar)
+
+def converttoDict(productions):
+    temp = {}
+    for rule in productions:
+        if rule[0] in temp:
+            temp[rule[0]].append(rule[1])
+        else:
+            temp[rule[0]] = []
+            temp[rule[0]].append(rule[1])
+    return temp
