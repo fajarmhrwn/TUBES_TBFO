@@ -40,7 +40,6 @@ grammar.txt
 main.py
 splitter.py
 test.py
-test.txt
 ```
 
 ## Setup and Usage
