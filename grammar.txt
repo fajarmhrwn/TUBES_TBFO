@@ -1,6 +1,8 @@
-Variables :
+Terminals:
+( ) none , and or not true false + - * / % = < > ! is in " ' [ ] { } for : # if elif else while break continue pass def return range raise class from import as with
+Variables:
 IF ELSE PLUS MINUS TIMES POW DIVIDED MOD EQUALS RETURN BRACE1 BRACE2 KURAWAL1 KURAWAL2 GT LT SERU DOT COMMA COLON SEMICOLON PETIK1 PETIK2 STRING BOOL NEW TRUE FALSE BREAK CONST SWITCH CASE DEFAULT TRY CATCH FINALLY THROW LET VAR CONTINUE DELETE FOR FUNC_SYNTAX NULL WHILE DO
-Productions;
+Productions:
 IF -> if;
 ELSE -> else;
 PLUS -> +;
