@@ -1,74 +1,23 @@
 # isinya fa masih kosongan
-def state1(c):
-    if(ord(c) >= 65 and ord(c) <= 90):
-        state = 2
-    elif(ord(c) == 95):
-        state = 2
-    elif(ord(c) >= 97 and ord(c) <= 122):
-        state = 2
-    else :
-        state = 3
-    return state
-
-def state2(c):
-    if(ord(c) >= 65 and ord(c) <= 90):
-        state = 2
-    elif(ord(c) == 95):
-        state = 2
-    elif(ord(c) >= 97 and ord(c) <= 122):
-        state = 2
-    elif(ord(c) >= 48 and ord(c) <= 57):
-        state = 2
-    else :
-        state = 3
-    return state
-
-def state3(c):
-    state = 3
-    return state
-
-def state4(c):
-    if(ord(c) >= 48 and ord(c) <= 57):
-        state = 5
-    else :
-        state = 6
-    return state
-
-def state5(c):
-    if(ord(c) >= 48 and ord(c) <= 57):
-        state = 5
-    else :
-        state = 6
-    return state
-
-def state6(c):
-    state = 6
-    return state
-
-def isVariable(s):
-    state = 1
-    for i in range (len(s)):
-        if (state == 1):
-            state = state1(s[i])
-        if (state == 2):
-            state = state2(s[i])
-        if (state == 3):
-            state = state3(s[i])
-    if (state == 2):
-        return True
-    else :
+def cekVar(name):
+    '''Check if it is a variable name'''
+    jsKey = ['await','break','case','catch','class','const','continue','debugger','default'	,'delete', 'do'	,'else'	,'enum'	,'export','extends','false','finally','for','function','if','implements','import','in','instanceof','interface','let','new','null','package','private','protected','public','return','super','switch','static','this','throw','try','true','typeof','var','void','while','with','yield']
+    if name in jsKey:
         return False
+    else:
+        if name[0] != '_' or not(name[0].isalpha()) or name[0] != '$':
+            return False
+        else:
+            state = False
+            for i in name[1:]:
+                if i.isalnum() or i == '_' or i == '$' or i.isalpha():
+                    state = True
+            return state
 
-def isNumber(s):
-    state = 4
-    for i in range (len(s)):
-        if (state == 4):
-            state = state4(s[i])
-        if (state == 5):
-            state = state5(s[i])
-        if (state == 6):
-            state = state6(s[i])
-    if (state == 5):
-        return True
-    else :
-        return False
+
+def cekNum(num):
+    '''Check if it is a number'''
+    for i in num:
+        if i.isdigit():
+            return True
+    return False
