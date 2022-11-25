@@ -30,14 +30,17 @@ SLR, LR(1), dll untuk algoritma yang dapat digunakan untuk melakukan parsing.
 
 ## Structures
 ```bash
-file.txt
-file_processing.py
-grammar.txt
-grammar_convert.py
-grammar_parser.py
-grammar_processing.py
-parserprogram.py
+CNF.py
+CYK.py
 README.md
+coba.js
+convertCFG.py
+fa.py
+grammar.txt
+main.py
+splitter.py
+test.py
+test.txt
 ```
 
 ## Setup and Usage
@@ -46,6 +49,6 @@ README.md
 3. Jalankan program parsing menggunakan command `py parsingprogram.py <source_code>`.
 
 ## Authors
-* [Fajar Maulana Herawan - 13521080](https://github.com/rayhankinan)
-* [Vieri Fajar Firdaus - 13521099](https://github.com/samuelswandi)
-* [Aulia Mey Diva Annandya - 13521103](https://github.com/dhikaarta)
+* [Fajar Maulana Herawan - 13521080](https://github.com/fajarmhrwn)
+* [Vieri Fajar Firdaus - 13521099](https://github.com/vierifirdaus)
+* [Aulia Mey Diva Annandya - 13521103](https://github.com/auliamey)
