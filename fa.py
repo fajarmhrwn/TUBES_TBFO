@@ -9,7 +9,7 @@ def state1(cc):
 
 def state2(cc):
     '''state 2'''
-    if cc == '_' or cc.isalpha() or cc == '$' or cc.isalnum():
+    if cc == '_' or cc.isalpha() or cc == '$' or cc.isnumeric():
         return 2
     elif cc == '.':
         return 6
@@ -39,8 +39,6 @@ def state6(nama):
     else:
         return 6
 
-
-
 def cekVar(name):
     '''Check if it is a variable name'''
     name = name+'.'
@@ -61,13 +59,16 @@ def cekVar(name):
 
 def cekNum(num):
     '''Check if it is a number'''
-    state = 4
+    state = 1
     for i in num:
+        if state == 1:
+            state = state4(i)
         if state == 4:
             state = state4(i)
         if state == 5:
             state = state5(i)
-    if state == 5:
-        return False
-    else:
+    if state == 4:
         return True
+    else:
+        return False
+    

@@ -15,10 +15,10 @@ def split(input_file):
     '''output = re.split(r'\s+'r'\n'r'\n'r'\n'r'\n'r'\n', inputfile) ini cara pertama tp ada galatnya anj
     output = inputfile.split(" ") iniyg bisa'''
     output = inputfile.split(" ")
-    print(output)
+    # print(output)
     #statement 
-    operator = ['=', '!=', '==', '>=', '<=', '<', '>', ':', ',', '/', '-', r'\+', r'\*', r'\*\*', r'\'', r'\"', r'\'\'\'', r'\(', r'\)', 'none', 'not', 'true', 'false', r'\{', r'\}', r'\[', r'\]', 'for', '#', 'elif', 'else', 'while', 'break', 'continue', 'pass', 'def', 'return', 'range', 'raise', 'class', 'from', 'import', 'with', '%', r'\n', ' ']
-    operator2 = ['=', '!=', '==', '>=', '<=', '<', '>', ':', ',', '/', '-', '+', '*', '**', "'", '"', '(', ')', 'none', 'not', 'true', 'false', '{', '}', '[', ']', 'for', '#', 'elif', 'else', 'while', 'break', 'continue', 'pass', 'def', 'return', 'range', 'raise', 'class', 'from', 'import', 'with', '%']
+    operator = ['=', '!=', '==', '>=', '<=', '<', '>', ':', ',', '/', '-', r'\+', r'\*', r'\*\*', r'\'', r'\"', r'\'\'\'', r'\(', r'\)', 'none', 'not', 'true', 'false', r'\{', r'\}', r'\[', r'\]', 'for', '#', 'elif', 'else', 'while', 'break', 'continue', 'pass', 'def', 'return', 'range', 'raise', 'class', 'from', 'import', 'with', '%', '\n']
+    operator2 = ['=', '!=', '==', '>=', '<=', '<', '>', ':', ',', '/', '-', '+', '*', '**', "'", '"', '(', ')', 'none', 'not', 'true', 'false', '{', '}', '[', ']', 'for', '#', 'elif', 'else', 'while', 'break', 'continue', 'pass', 'def', 'return', 'range', 'raise', 'class', 'from', 'import', 'with', '%','\n']
 
     # split the target string with the following pattern
     for op in operator:
@@ -30,22 +30,29 @@ def split(input_file):
                 tempResult.append(splitted) 
         output = tempResult
 
-    print(output)
-    tempResult = []
-    
+    # print(output)
+    temp = []
+    valid = True
+    # print(output,"===")
     for statement in output:
         if statement in operator2:
-            tempResult.append(statement)
-        elif statement == '\n' :
-            tempResult.append('newline')
-        elif statement == 'in' or statement == 'if':
-            tempResult.append(statement)
-        elif(cekVar(statement)):
-            tempResult.append('a')
-        elif(cekNum(statement)):
-            tempResult.append('1')
+            temp.append(statement)
+            # print("didalam operator",statement)
         else:
-            continue
-    print(tempResult)
-    
-    return tempResult
+            if statement == 'as' or statement == 'is' or statement == 'or' or statement == 'in' or statement == 'if' or statement == 'and':
+                temp.append(statement)
+                # print("asdkk",statement)
+            else:
+                # print("variabel:-",statement)
+                if(cekVar(statement)):
+                    # print(statement)
+                    temp.append('a')
+                elif(cekNum(statement)):
+                    # print(statement)
+                    temp.append('1')
+                elif statement == '':
+                    continue
+    for i in range(len(temp)):
+        if temp[i] == '\n':
+            temp[i] = 'newline'
+    return temp,valid

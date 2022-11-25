@@ -1,5 +1,14 @@
-import re
-s = 'if'
-status = re.split(r'[A..z]*(=)[A..z]*', s)
-for i in status:
-    print(i)
+def do_something(x):
+    ''' This is a sample multiline comment
+    ''
+    if x == 0:
+        return 0
+    elif x + 4 == 1:
+        if true:
+            return 3
+        else:
+            return 2
+    elif x == 32:
+        return 4
+    else:
+        return "Doodoo"

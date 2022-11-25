@@ -69,14 +69,14 @@ def ConvertToCNF(productions, variables, terminal):
             for i in range(1,len(rule[1])-2):
                 var1,var2 = VarName+str(i),VarName+str(i+1)
                 variables.append(var2)
-                print([var1,[rule[1][i],var2]])
                 temp.append([var1,[rule[1][i],var2]])
+            temp.append([VarName+str(len(rule[1])-2), rule[1][(len(rule[1]))-2:len(rule[1])]])
     productions = temp 
     j = 0
     result = []
     result = subtitutedRule(productions, variables)
     temp = subtitutedRule(result, variables)
-    while temp != result and j < 10:
+    while temp != result and j < 1000:
         result = subtitutedRule(temp, variables)
         temp = subtitutedRule(result, variables)
         j = j+1
