@@ -1,15 +1,12 @@
-let x = 5;
-try
-{
-  x = y + 1;   // y cannot be used (referenced)
-}
-catch
-(err) {
-  console.log("asu")
+function a(
+    x,y
+    ){
+    return x+y
 }
 
-if
-(x>4)
-{
-    console.log("asu")
+
+for(let i=0 ;i<10;i++){
+    console.log(i)
+    break
+    break 
 }
